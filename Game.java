@@ -7,31 +7,6 @@ public class Game {
     private String key="";
     Board board =  new Board();
     
-    public boolean getWin() {
-    	return myWin;
-    }
-    
-    public boolean getLose() {
-    	return myLose;
-    }
-    
-    public void setWin(boolean b) {
-    	myWin = b;
-    }
-    
-    public void setLose(boolean b) {
-    	myLose = b;
-    }
-    
-    public void resetGame() {
-        myScore = 0;
-        myWin = false;
-        myLose = false;
-        board = new Board();
-        addTile();
-        addTile();
-    }
-    
     public void left() {
         key="left";
         boolean needAddTile = false;
@@ -181,6 +156,7 @@ public class Game {
         }
     }
     
+    
     private void ensureSize(java.util.List<Tile> l, int s) {
         while (l.size() != s) {
             l.add(new Tile());
@@ -191,6 +167,31 @@ public class Game {
         while (l.size() != s) {
             l.add(p,new Tile());
         }
+    }
+    
+        public boolean getWin() {
+    	return myWin;
+    }
+    
+    public boolean getLose() {
+    	return myLose;
+    }
+    
+    public void setWin(boolean b) {
+    	myWin = b;
+    }
+    
+    public void setLose(boolean b) {
+    	myLose = b;
+    }
+    
+    public void resetGame() {
+        myScore = 0;
+        myWin = false;
+        myLose = false;
+        board = new Board();
+        addTile();
+        addTile();
     }
     
     public Tile[] getBoard() {
